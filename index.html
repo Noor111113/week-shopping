@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🛒 قائمة التسوق الأسبوعية</title>
+
+    <!-- ربط خارجي لملف CSS -->
+    <link href="./style.css" rel="stylesheet" />
+
+    <!-- مكتبة html2pdf.js لتوليد PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- تحسين عرض اللغة العربية -->
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        direction: rtl;
+        text-align: right;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="pdf-content">
+      <h2 class="main-title">🛒 قائمة الطلبات الأسبوعية</h2>
+
+      <!-- بداية قسم الخضروات -->
+      <section class="category" id="vegetables">
+        <button class="category-toggle">🥬 الخضروات</button>
+        <ul class="item-list">
+          <!-- عنصر فيه عناصر فرعية -->
+          <li class="item-group">
+            <label><input type="checkbox" /> بصل</label>
+            <ul class="sub-item-list">
+              <!-- ✅ العناصر الفرعية داخل .sub-item -->
+              <li class="sub-item">
+                <label><input type="checkbox" /> بصل أحمر</label>
+                <!-- ✅ تعديل: استبدال input بعناصر التحكم في الكمية -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> بصل أبيض</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> بصل أخضر</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- عنصر فيه عناصر فرعية -->
+          <li class="item-group">
+            <label><input type="checkbox" /> فلفل</label>
+            <ul class="sub-item-list">
+              <!-- ✅ العناصر الفرعية داخل .sub-item -->
+              <li class="sub-item">
+                <label><input type="checkbox" /> فلفل أخضر</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> فلفل أحمر</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> فلفل حار</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- عنصر فيه عناصر فرعية -->
+          <li class="item-group">
+            <label><input type="checkbox" /> ملفوف</label>
+            <ul class="sub-item-list">
+              <!-- ✅ أول عنصر فيه .sub-item -->
+              <li class="sub-item">
+                <label><input type="checkbox" /> ملفوف أخضر</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> ملفوف أحمر</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- عناصر مستقلة -->
+          <!-- ✅ العناصر المستقلة لازم تكون داخل li.item -->
+          <li class="item">
+            <label><input type="checkbox" /> طماطم</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> خيار</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> جزر</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> بطاطس</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> باذنجان</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> ثوم</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> ليمون أخضر</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> ليمون اصفر</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+        </ul>
+        <!-- نهاية قسم الخضروات -->
+      </section>
+
+      <!-- بداية قسم الخضار الورقية -->
+      <section class="category" id="leafy-vegetables">
+        <button class="category-toggle">🌿 الخضـار الورقية</button>
+        <ul class="item-list">
+          <!-- ✅ العناصر المستقلة داخل li.item -->
+          <li class="item">
+            <label><input type="checkbox" /> بقدونس</label>
+            <!-- ✅ تعديل: استبدال input بعناصر التحكم في الكمية -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> كزبرة</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> ملوخية</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> نعناع</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> كراث</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> جرجير</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> شبت</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> خس</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> ريحان</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> كرفــس</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!-- نهاية قسم الخضار الورقية -->
+
+      <section class="category" id="fruits">
+        <!-- بداية قسم الفواكه -->
+
+        <button class="category-toggle">🍎 الفواكـة</button>
+        <ul class="item-list">
+          <!-- تفاح بأنواعه -->
+          <li class="item-group">
+            <label><input type="checkbox" />تفاح</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> تفاح أحمر</label>
+                <!-- ✅ تعديل: استبدال input بعناصر التحكم في الكمية -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> تفاح أخضر</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> رويال جالا</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- عنب بأنواعه -->
+          <li class="item-group">
+            <label><input type="checkbox" />عنب</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> عنب أحمر</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> عنب أبيض</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> عنب أسود </label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- عناصر الفواكه المستقلة -->
+
+          <li class="item">
+            <label><input type="checkbox" />برتقال </label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> موز</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" />يوسف </label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" />خوخ </label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" />كيوي </label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> بخارى</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" />كمثرى </label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" />رمـان </label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> برشومي</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> جوافة</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" />بطيخ</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" />شمـام</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" />فراولة </label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+        </ul>
+        <!-- نهاية قسم الفواكه -->
+      </section>
+
+      <!-- بداية قسم البروتين -->
+      <section class="category" id="proteins">
+        <button class="category-toggle">🍗 البروتين</button>
+
+        <ul class="item-list">
+          <!-- دجاج -->
+          <li class="item-group">
+            <label><input type="checkbox" /> دجاج</label>
+            <ul class="sub-item-list">
+              <li class="item-group">
+                <label><input type="checkbox" /> دجاج اليوم</label>
+                <ul class="sub-item-list">
+                  <li class="sub-item">
+                    <label><input type="checkbox" /> 900 جرام</label>
+                    <!-- ✅ تعديل: استبدال input بعداد -->
+                    <div class="quantity-controls">
+                      <button class="decrease">-</button>
+                      <span class="quantity">0</span>
+                      <button class="increase">+</button>
+                    </div>
+                  </li>
+                  <li class="sub-item">
+                    <label><input type="checkbox" /> 1000 جرام</label>
+                    <!-- ✅ تعديل -->
+                    <div class="quantity-controls">
+                      <button class="decrease">-</button>
+                      <span class="quantity">0</span>
+                      <button class="increase">+</button>
+                    </div>
+                  </li>
+                  <li class="sub-item">
+                    <label><input type="checkbox" /> 1200 جرام</label>
+                    <!-- ✅ تعديل -->
+                    <div class="quantity-controls">
+                      <button class="decrease">-</button>
+                      <span class="quantity">0</span>
+                      <button class="increase">+</button>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <!-- صدور دجاج -->
+          <li class="item-group">
+            <label><input type="checkbox" /> صدور دجاج</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> 450 جرام</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> 900 جرام</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- اللحـم -->
+          <li class="item-group">
+            <label><input type="checkbox" /> اللحـم</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> كيلو</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- اللحم المفروم -->
+          <li class="item-group">
+            <label><input type="checkbox" /> اللحم المفروم</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> كيلو</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- نهاية قسم البروتين -->
+      </section>
+
+      <section class="category" id="canned">
+        <!-- بداية قسم المعلبات -->
+        <button class="category-toggle">🥫 المعلبات</button>
+
+        <ul class="item-list">
+          <!-- تونة -->
+          <li class="item-group">
+            <label><input type="checkbox" /> تونة</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> ريو ماري بزيت الزيتون</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> ألوها بزيت الزيتون 185 جرام</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> السنبلة بزيت الزيتون 160
+                  جرام</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> جرين فارمز بزيت الزيتون 170
+                  جرام</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- زيتون -->
+          <li class="item-group">
+            <label><input type="checkbox" /> زيتون</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> كوبوليفا أسود</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> كوبوليفا أخضر</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- الجبن -->
+          <li class="item-group">
+            <label><input type="checkbox" /> الجبن</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> المراعي فيتا 400 جرام</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> حلومي لايت 200 جرام</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> كيري مربعات 12 حبة</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> موزاريلا مبشورة 400 جرام بوك</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> بريزيدن الأجبان الأربعة 400
+                  جرام</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> شرايح شيدر المراعي</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> كرافت شيدر قابلة للدهن 440
+                  جرام</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- الزبادي -->
+          <li class="item-group">
+            <label><input type="checkbox" /> الزبادي</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> يوناني سادة</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> طازج كامل الدسم 170 جرام</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- العناصر المستقلة -->
+          <!-- ✅ تم استبدال input في جميع العناصر المستقلة بعدادات -->
+          <li class="item">
+            <label><input type="checkbox" /> لبنة تركية 180 جرام</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> دانيت شوكولاتة</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> كريمة طبخ 250 مل</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> كريمة خفق 250 مل</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> قشطة قيمر 125 مل</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> قشطة التاج 155 جرام</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> زبدة المراعي 60 جرام</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> بيض الوطنية 30 حبة</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> عسل</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> فول سوداني</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> زبدة اللوز</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> زبدة الكاجو</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> مربى التين</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> حلاوة طحينية النخلة 1 كجم</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> أوفومالتين شوكلاتة 380 جرام</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item">
+            <label><input type="checkbox" /> طحينة النخلة 1 كجم</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+        </ul>
+        <!-- نهاية قسم المعلبات -->
+      </section>
+
+      <!-- بداية قسم الكربوهيدرات -->
+      <section class="category" id="carbs">
+        <button class="category-toggle">🍞 الكربوهيدرات</button>
+        <ul class="item-list">
+          <!-- توست -->
+          <li class="item-group">
+            <label><input type="checkbox" /> توست</label>
+            <ul class="sub-item-list">
+              <li>
+                <label><input type="checkbox" /> أبيض</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> بالحـبوب</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> نخالة</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> أسمر</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- خبز البرقر -->
+          <li class="item-group">
+            <label><input type="checkbox" /> خبز البرقر</label>
+            <ul class="sub-item-list">
+              <li>
+                <label><input type="checkbox" /> بالسمسم يومي</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> سادة لوزين</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> برقر هرفي</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- صامولي -->
+          <li class="item-group">
+            <label><input type="checkbox" /> صامولي</label>
+            <ul class="sub-item-list">
+              <li>
+                <label><input type="checkbox" /> لوزين أبيض</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> لوزين بر</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- تورتيلا -->
+          <li class="item-group">
+            <label><input type="checkbox" /> تورتيلا</label>
+            <ul class="sub-item-list">
+              <li>
+                <label><input type="checkbox" /> سادة لوزين</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> بر فونتي</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- الأرز -->
+          <li class="item-group">
+            <label><input type="checkbox" /> الأرز</label>
+            <ul class="sub-item-list">
+              <li>
+                <label
+                  ><input type="checkbox" /> العائلة بسمتي هندي عنبر 2
+                  كيلو</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> العائلة حبة طويلة بسمتي</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" /> بنجابي المهيدب بسمتي أبيض 2
+                  كيلو</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> صن وايت كالروز 1 كيلو</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- مكرونة قودي -->
+          <li class="item-group">
+            <label><input type="checkbox" /> مكرونة قودي</label>
+            <ul class="sub-item-list">
+              <li>
+                <label><input type="checkbox" /> سباغيتي</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> خواتم مخططة</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> فراشات</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> لازانيا</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- مكرونة بيرفيتو -->
+          <li class="item-group">
+            <label><input type="checkbox" /> مكرونة بيرفيتو</label>
+            <ul class="sub-item-list">
+              <li>
+                <label><input type="checkbox" /> أقلام 500 جرام</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> سباغيتي</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label><input type="checkbox" /> نوتشيولي</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- شعيرية -->
+          <li class="item-group">
+            <label><input type="checkbox" /> شعيرية</label>
+            <ul class="sub-item-list">
+              <li>
+                <label><input type="checkbox" /> شعيرية إيطالية</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" /> شعيرية باكستانية مهران 200
+                  جرام</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- نهاية قسم الكربوهيدرات -->
+      </section>
+      <!-- بداية قسم البهارات والصلصات -->
+      <section class="category" id="spices-sauces">
+        <button class="category-toggle">🌶 البهارات والصلصات</button>
+
+        <ul class="item-list">
+          <!-- معجون الطماطم بأنواعه -->
+          <li class="item-group">
+            <label><input type="checkbox" /> معجون الطماطم</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> السعودية 135 جرام</label>
+                <!-- ✅ تعديل: استبدال input بعداد -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> ندى 135 جرام</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- باقي الصلصات والخلطات -->
+          <li class="item-group">
+            <label><input type="checkbox" /> صلصة بيستو</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label><input type="checkbox" /> صلصة تكا ماسلا قودي</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label><input type="checkbox" /> صلصة الدجاج بالزبدة قودي</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label><input type="checkbox" /> خلطة الكبسة الوليمة</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label><input type="checkbox" /> خلطة البخاري الوليمة</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label><input type="checkbox" /> خلطة المندي الوليمة</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label><input type="checkbox" /> خلطة البرياني الوليمة</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label><input type="checkbox" /> خلطة دجاج ماسلا الوليمة</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label
+              ><input type="checkbox" /> السعودية كاتشب طماطم 150 جرام</label
+            >
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label><input type="checkbox" /> مايونيز قودي</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label><input type="checkbox" /> شطة السعودية</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label><input type="checkbox" /> شطة سومطرا</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+          <li class="item-group">
+            <label><input type="checkbox" /> شطة تباسكو فلفل أحمر</label>
+            <!-- ✅ تعديل -->
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">0</span>
+              <button class="increase">+</button>
+            </div>
+          </li>
+        </ul>
+        <!-- نهاية قسم البهارات والصلصات -->
+      </section>
+      <!-- بداية قسم التنظيف -->
+      <section class="category" id="cleaning">
+        <button class="category-toggle">🧼 التنظيف</button>
+        <ul class="item-list">
+          <!-- غسيل الملابس -->
+          <li class="item-group">
+            <label><input type="checkbox" /> غسيل الملابس</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> سائل غسيل الملابس باللافندر 2.8
+                  لتر</label
+                >
+                <!-- ✅ تعديل: استبدال input بعداد -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> مسحوق الغسيل بالداوني للغسالات
+                  الاوتوماتيكية 2.25 كجم</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> اريال منظف جل باور للغسالة
+                  الاوتوماتيكية 1.8 لتر</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> الوزير صابون برش 9900 جم</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- مزيلات البقع -->
+          <li class="item-group">
+            <label><input type="checkbox" /> مزيلات البقع</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> فانش سائل للملابس الملونة 1.8
+                  لتر</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> كلوركس سائل للملون 1.8 لتر</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> قو قرين مزيل البقع للملابس الملونة
+                  1 لتر</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- منعم الأقمشة -->
+          <li class="item-group">
+            <label><input type="checkbox" /> منعم الأقمشة</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> داوني باللافندر والمسك 1 لتر</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> كومفرت العشق الأزرق 1 لتر</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> برسيل شامبو عباية 1 لتر</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- منظفات المطبخ -->
+          <li class="item-group">
+            <label><input type="checkbox" /> منظفات المطبخ</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> فيري 400 مل</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> كلوركس 470 مل</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> ديتول 500 مل</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> فيري لغسالة الصحون أقراص 42
+                  حبة</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> فنش مساعد الشطف 400 مل</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> اسفنج فيليدا 6 حبات</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> منظف زجاج داك 400 مل</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- المناديل والبلاستيكات -->
+          <li class="item-group">
+            <label><input type="checkbox" /> المناديل والبلاستيكات</label>
+            <ul class="sub-item-list">
+              <li class="sub-item">
+                <label><input type="checkbox" /> مناديل هلا 10 حبات</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> سانيتا كلوب 8 رول</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> ورق قلاية هوائية</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> قصدير</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> نايلون</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> ورق زبدة</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> أكياس سانيتا 40 كيس</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> سانيتا كيس مهملات 55 جالون</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label
+                  ><input type="checkbox" /> سانيتا كيس مهملات 10 جالون</label
+                >
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> مفارش سفرة هلا</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+              <li class="sub-item">
+                <label><input type="checkbox" /> فحم الجود</label>
+                <!-- ✅ تعديل -->
+                <div class="quantity-controls">
+                  <button class="decrease">-</button>
+                  <span class="quantity">0</span>
+                  <button class="increase">+</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- نهاية قسم التنظيف -->
+      </section>
+      <div class="controls">
+        <button id="generate-pdf">📥 حفظ كـ PDF</button>
+        <button id="reset-quantities">🔄 مسح الكل</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
